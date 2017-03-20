@@ -2,6 +2,33 @@
   <thead>
     <tr>
       <th>Id</th>
+      <th>Name</th>
+      <th>Shared Link</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="slate in slates_ctrl.slates">
+      <td>{{ slate.id }}</td>
+      <td>{{ slate.name }}</td>
+      <td>{{ slates_ctrl.sharedLink(slate) }}</td>
+      <td>
+        <button ng-click="slates_ctrl.showSlate(slate)" class="show_button"> Show </button>
+        <button ng-click="slates_ctrl.editSlate(slate)" class="edit_button"> Edit </button>
+        <button ng-click="slates_ctrl.deleteSlate(slate)" class="delete_button"> Delete </button>
+        <button ng-if="!slate.shared" ng-click="slates_ctrl.shareSlate(slate, true)" class="share_button"> Share </button>
+        <button ng-if="slate.shared" ng-click="slates_ctrl.shareSlate(slate, false)" class="unshare_button"> Unshare </button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- <table class="col-lg-8 col-lg-offset-2">
+  <thead>
+    <tr>
+      <th>Id</th>
       <th>President</th>
       <th>Shared Link</th>
       <th>Actions</th>
@@ -22,4 +49,4 @@
       </td>
     </tr>
   </tbody>
-</table>
+</table> -->
