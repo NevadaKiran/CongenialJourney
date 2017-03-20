@@ -1,13 +1,11 @@
 angular
   .module('slateDriver')
-  .controller('HomeCtrl', HomeCtrl)
+  .controller('HomeCtrl', ['$http', '$scope', '$rootScope', 'Auth', function($http, $scope, $rootScope, Auth) {
+    var controller = this;
+    $scope.hello = "Hello World"
 
-function HomeCtrl($http, $scope, $rootScope, Auth){
-  var controller = this;
-  $scope.hello = "Hello World"
-
-  $http.get("/slates/latest.json")
-    .then(function (response) {
-      $scope.latest_slate = response.data;
-    })
-}
+    $http.get("/slates/latest.json")
+      .then(function (response) {
+        $scope.latest_slate = response.data;
+      })
+}]);

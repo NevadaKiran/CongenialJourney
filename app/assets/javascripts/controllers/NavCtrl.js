@@ -1,6 +1,6 @@
 angular
   .module('slateDriver')
-  .controller('NavCtrl', function($scope, Auth, $rootScope){
+  .controller('NavCtrl', ['$scope', 'Auth', '$rootScope', function($scope, Auth, $rootScope){
     $scope.signedIn = Auth.isAuthenticated;
     $scope.logout = Auth.logout;
 
@@ -20,4 +20,4 @@ angular
       alert("You have been logged out.")
       $rootScope.user = undefined
     });
-  })
+  }]);

@@ -1,6 +1,6 @@
 angular
   .module('slateDriver')
-  .controller('AuthCtrl', function($scope, $rootScope, Auth, $state){
+  .controller('AuthCtrl', ['$scope', '$rootScope', 'Auth', '$state', function($scope, $rootScope, Auth, $state){
     var config = {headers: {'X-HTTP-Method-Override': 'POST'}}
 
     $scope.register = function(){
@@ -22,4 +22,4 @@ angular
         alert(response.data.error)
       });
     }
-  })
+  }]);
