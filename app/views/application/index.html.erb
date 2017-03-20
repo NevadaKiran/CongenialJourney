@@ -1,0 +1,35 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Slatedriver</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body ng-app="slateDriver" ng-controller="HomeCtrl">
+    <nav-bar></nav-bar>
+    <ui-view></ui-view>
+  </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slatedriver</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body ng-app="slateDriver" ng-controller="HomeCtrl as home">
+    <header class="navbar navbar-default" style="background-color:#003366;">
+      <nav-bar></nav-bar>
+    </header>
+
+    <ui-view></ui-view>
+  </body>
+</html>
